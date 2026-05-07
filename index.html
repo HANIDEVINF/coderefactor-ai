@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeRefactor AI - AI Code Refactoring Bot</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>CodeRefactor AI</h1>
+      <p>AI Code Refactoring Bot</p>
+    </header>
+
+    <main class="container grid">
+      <section class="card">
+        <h2>Input Code</h2>
+        <label for="language">Language</label>
+        <select id="language">
+          <option value="javascript">JavaScript</option>
+          <option value="python">Python</option>
+        </select>
+
+        <label for="codeInput">Paste your code</label>
+        <textarea id="codeInput" placeholder="Paste your code here..."></textarea>
+
+        <div class="row">
+          <button id="analyzeBtn" class="primary">Analyze</button>
+          <button id="refactorBtn">Auto Refactor</button>
+          <button id="saveBtn">Save Review</button>
+          <button id="sampleBtn">Load Sample</button>
+          <button id="clearBtn">Clear</button>
+        </div>
+        <p id="statusMessage" class="status" aria-live="polite"></p>
+      </section>
+
+      <section class="card">
+        <h2>Review Results</h2>
+        <div id="score" class="score">Quality score: -- / 100</div>
+        <ul id="issues" class="issues"></ul>
+
+        <h3>Refactored Output</h3>
+        <pre id="refactoredCode">No refactor yet.</pre>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <small>Built for portfolio by Hani Ghena</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
